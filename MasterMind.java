@@ -32,6 +32,7 @@ public class MasterMind {
     //Affichage titre et regles
     afficher("titre");
     afficher("regles");
+    afficher("ready");
     afficher("choixNomJoueur1");
     nomJoueur1 = saisie.nextLine();
     afficher("choixNomJoueur2");
@@ -106,9 +107,10 @@ public class MasterMind {
     Hashtable<String, String> phrase = new Hashtable<String, String>();
     phrase.put("titre", "\n-------------------------\nBienvenue au MasterMind !\n-------------------------\n\n");
     phrase.put("choixDifficulte", "Veuillez choisir une difficulté\n1 : facile.\n2 : moyen.\n3 : difficile.\nChoix : ");
-    phrase.put("regles", "Ici se trouverons les règles du jeu\n");
+    phrase.put("regles", "Le Mastermind est un jeu de logique et de déduction qui repose sur un principe très simple : retrouver une combinaison de 4 couleurs (parmi 6 disponibles) :\n \nJ = Jaune\nR = Rouge\nV = Vert\nB = Bleu\nN = Noir\nO = Orange\n\nA chaque essai, le joueur reçoit des indications sur les couleurs et les emplacements qu’il a choisis :\nLa stratégie consiste à choisir les couleurs et leur emplacement en fonction des coups précédents. Le but est d’obtenir le plus d’informations et de se rapprocher le plus rapidement possible de la solution puisque le nombre de propositions est limité.\n");
     phrase.put("choixNomJoueur1", "Joueur 1 entrez votre nom : ");
     phrase.put("choixNomJoueur2", "Joueur 2 entrez votre nom : ");
+    phrase.put("ready", "\nAre you ready ?\n\n");
     phrase.put("difficulteFalse", "Veuillez saisir une difficulté entre 1 et 3 merci !\n\n");
     phrase.put("erreurNbreLettres", "Vous n'avez pas rentré 4 lettres différentes. Veuillez recommencer.\n");
     phrase.put("gagne", "\n-------------------------\nVous avez gagné !\nSUSHI GOOOOOOOOO\n-------------------------\n\n");
