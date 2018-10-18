@@ -22,8 +22,8 @@ public class MasterMind {
     int[] tableauPlace = new int[2];
     int nombreTours = 0;
     char difficulte;
-    String nomJoueur1;
-    String nomJoueur2;
+    String nomJoueur1 = "";
+    String nomJoueur2 = "";
     String joueur1;
     String joueur2;
     boolean bonnesLettres;
@@ -62,7 +62,7 @@ public class MasterMind {
     do {
       afficher("choixUtilisateur", nomJoueur1);
       joueur1 = PasswordField.readPassword(); //affichage sous forme d'étoiles
-      bonnesLettres = joueur1.matches("[RJVBNO]+");// Regex.
+      bonnesLettres = joueur1.matches("[RJVBNOrjvbno]+");// Regex.
       if (joueur1.length() != 4 || verifLettresDiff(joueur1) == false || bonnesLettres == false) {
         afficher("erreurNbreLettres");
       }
@@ -77,7 +77,7 @@ public class MasterMind {
       do {
         afficher("choixUtilisateur", nomJoueur2);
         joueur2 = saisie.nextLine();
-        bonnesLettres = joueur2.matches("[RJVBNO]+");// Regex.
+        bonnesLettres = joueur2.matches("[RJVBNOrjvbno]+");// Regex.
         if (joueur2.length() != 4 || verifLettresDiff(joueur2) == false || bonnesLettres == false) {
           afficher("erreurNbreLettres");
         }
@@ -161,7 +161,7 @@ public class MasterMind {
     return phrase.get(mot);
   }
 
-  //Méthode qui met les lettres rentrées par le joueur en majuscule
+  //Méthode qui met les lettres rentrées par le joueur en MAJUSCULE
   //et sous forme de tableau.
   public static char[] combinaisonJoueur(String joueur) {
     char[] tableauCouleur = new char[4];
