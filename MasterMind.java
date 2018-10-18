@@ -211,7 +211,7 @@ public class MasterMind {
     for (int i = 0; i < mot.length(); i++){
       System.out.print(mot.charAt(i));
       try {
-        Thread.sleep(20);
+        Thread.sleep(20); //pause de 20 millisecondes entre chaque affichage de lettre
             } catch(InterruptedException ie) {
                ie.printStackTrace();
             }
