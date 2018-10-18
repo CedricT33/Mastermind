@@ -54,7 +54,7 @@ public class MasterMind {
     // Boucle vérification des lettres du joueur 1.
     do {
       afficher("choixUtilisateur", nomJoueur1);
-      joueur1 = new String(System.console().readPassword());
+      joueur1 = PasswordField.readPassword(); //affichage sous forme d'étoiles
       if (joueur1.length() != 4 || verifLettresDiff(joueur1) == false) {
         afficher("erreurNbreLettres");
       }
@@ -91,7 +91,7 @@ public class MasterMind {
       afficher("perdu");
     }
   } // Fin boucle jeu.
-  
+
   public static String afficher(String mot) {
 
     Hashtable<String, String> phrase = new Hashtable<String, String>();
@@ -101,7 +101,6 @@ public class MasterMind {
     phrase.put("choixNomJoueur1", "Joueur 1 entrez votre nom : ");
     phrase.put("choixNomJoueur2", "Joueur 2 entrez votre nom : ");
     phrase.put("difficulteFalse", "Veuillez saisir une difficulté entre 1 et 3 merci !\n\n");
-    phrase.put("choixUtilisateur", "veuillez entrer 4 lettres différentes (J,R,V,B,N,O) : ");
     phrase.put("erreurNbreLettres", "Vous n'avez pas rentré 4 lettres différentes. Veuillez recommencer.\n");
     phrase.put("gagne", "Vous avez gagné !\n");
     phrase.put("perdu", "Vous avez perdu !\n");
