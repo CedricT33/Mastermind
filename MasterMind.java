@@ -1,7 +1,7 @@
 import java.util.Scanner;
 import java.util.Hashtable;
 import java.util.Arrays;
-// import java.lang.Thread;
+
 
 /**
 *Classe principale du jeu MasterMind
