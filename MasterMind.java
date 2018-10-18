@@ -24,6 +24,8 @@ public class MasterMind {
     String joueur1;
     String joueur2;
 
+    boolean bonnesLettres;
+
     afficher("titre");
     afficher("choixNomJoueur1");
     nomJoueur1 = saisie.nextLine();
@@ -55,10 +57,12 @@ public class MasterMind {
     do {
       afficher("choixUtilisateur", nomJoueur1);
       joueur1 = new String(System.console().readPassword());
-      if (joueur1.length() != 4 || verifLettresDiff(joueur1) == false) {
+      bonnesLettres = joueur1.matches("[RJVBNO]+");
+      // Regex.
+      if (joueur1.length() != 4 || verifLettresDiff(joueur1) == false || bonnesLettres == false) {
         afficher("erreurNbreLettres");
       }
-    } while (joueur1.length() != 4 || verifLettresDiff(joueur1) == false);
+    } while (joueur1.length() != 4 || verifLettresDiff(joueur1) == false || bonnesLettres == false);
     combiATrouver = combinaisonJoueur(joueur1);
 
     //boucle jeu
@@ -69,10 +73,12 @@ public class MasterMind {
       do {
         afficher("choixUtilisateur", nomJoueur2);
         joueur2 = saisie.nextLine();
-        if (joueur2.length() != 4 || verifLettresDiff(joueur2) == false) {
+        bonnesLettres = joueur2.matches("[RJVBNO]+");
+        // Regex.
+        if (joueur2.length() != 4 || verifLettresDiff(joueur2) == false || bonnesLettres == false) {
           afficher("erreurNbreLettres");
         }
-      } while (joueur2.length() != 4 || verifLettresDiff(joueur2) == false);
+      } while (joueur2.length() != 4 || verifLettresDiff(joueur2) == false || bonnesLettres == false);
       combiUtilisateur = combinaisonJoueur(joueur2);
 
       // Comparaison lettres joueur 1 et joueur 2.
@@ -91,7 +97,7 @@ public class MasterMind {
       afficher("perdu");
     }
   } // Fin boucle jeu.
-  
+
   public static String afficher(String mot) {
 
     Hashtable<String, String> phrase = new Hashtable<String, String>();
