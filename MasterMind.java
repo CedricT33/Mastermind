@@ -114,7 +114,7 @@ public class MasterMind {
     phrase.put("difficulteFalse", "Veuillez saisir une difficulté entre 1 et 3 merci !\n\n");
     phrase.put("erreurNbreLettres", "Vous n'avez pas rentré 4 lettres différentes. Veuillez recommencer.\n");
     phrase.put("gagne", "\n-------------------------\nVous avez gagné !\nSUSHI GOOOOOOOOO\n-------------------------\n\n");
-    phrase.put("perdu", "\n-------------------------\nVous avez perdu !\n-------------------------\n");
+    phrase.put("perdu", "\n-------------------------\nVous avez perdu !\nMerci d'avoir acheté MasterMind\nau prix unique de 0,99€\n-------------------------\n");
     phrase.put("sautDeLigne", "\n");
     ecritureLente(phrase.get(mot));
     return phrase.get(mot);
