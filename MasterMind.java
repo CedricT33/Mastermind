@@ -1,6 +1,7 @@
 import java.util.Scanner;
 import java.util.Hashtable;
 import java.util.Arrays;
+import java.lang.Thread;
 
 public class MasterMind {
 
@@ -51,7 +52,7 @@ public class MasterMind {
       }
     } while (difficulte != '1' && difficulte != '2' && difficulte != '3');
 
-    afficher ("nombreCoups", nombreTours);
+    afficher("nombreCoups", nombreTours);
 
     // Boucle vérification des lettres du joueur 1.
     do {
@@ -108,11 +109,11 @@ public class MasterMind {
     phrase.put("choixNomJoueur2", "Joueur 2 entrez votre nom : ");
     phrase.put("difficulteFalse", "Veuillez saisir une difficulté entre 1 et 3 merci !\n\n");
     phrase.put("erreurNbreLettres", "Vous n'avez pas rentré 4 lettres différentes. Veuillez recommencer.\n");
-    phrase.put("gagne", "Vous avez gagné !\n");
-    phrase.put("perdu", "Vous avez perdu !\n");
+    phrase.put("gagne", "\n-------------------------\nVous avez gagné !\nSUSHI GOOOOOOOOO\n-------------------------\n\n");
+    phrase.put("perdu", "\n-------------------------\nVous avez perdu !\n-------------------------\n");
     phrase.put("sautDeLigne", "\n");
 
-    System.out.print(phrase.get(mot));
+    ecritureLente(phrase.get(mot));
     return phrase.get(mot);
   }
 
@@ -200,6 +201,17 @@ public class MasterMind {
       isGood = true;
     }
     return isGood;
+  }
+
+  public static void ecritureLente(String mot){
+    for (int i = 0; i < mot.length(); i++){
+      System.out.print(mot.charAt(i));
+      try {
+        Thread.sleep(20);
+            } catch(InterruptedException ie) {
+               ie.printStackTrace();
+            }
+    }
   }
 
 }
