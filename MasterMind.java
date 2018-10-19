@@ -2,7 +2,6 @@ import java.util.Scanner;
 import java.util.Hashtable;
 import java.util.Arrays;
 
-
 /**
 *Classe principale du jeu MasterMind
 *Codé avec amour par Vincent et Cédric de Simplon !!
@@ -99,6 +98,7 @@ public class MasterMind {
     //Comparaison des deux suites de lettres pour afficher perdu.
     if (!Arrays.equals(combiATrouver, combiUtilisateur)){
       afficher("perdu");
+      System.out.print("La bonne combinaison était : " + joueur1 + "\n");
     }
   } // Fin boucle jeu.
 
@@ -176,7 +176,6 @@ public class MasterMind {
 
   //Méthode qui compare les 2 suites de lettres
   public static int[] comparaisonTableaux(char[] tableau1, char[] tableau2) {
-
     int bienPlace = 0;
     int malPlace = 0;
     int[] tableauPlace = new int[2];
@@ -217,5 +216,4 @@ public class MasterMind {
             }
     }
   }
-
 }
