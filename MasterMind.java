@@ -2,17 +2,14 @@ import java.util.Scanner;
 import java.util.Hashtable;
 import java.util.Arrays;
 
-
 /**
 *Classe principale du jeu MasterMind
 *Codé avec amour par Vincent et Cédric de Simplon !!
 */
 public class MasterMind {
-
   static Scanner saisie;
 
   public static void main(String[] args) {
-
     saisie = new Scanner(System.in);
 
     //Déclaration des variables
@@ -211,7 +208,7 @@ public class MasterMind {
     for (int i = 0; i < mot.length(); i++){
       System.out.print(mot.charAt(i));
       try {
-        Thread.sleep(20); //pause de 20 millisecondes entre chaque affichage de lettre
+        Thread.sleep(20);
             } catch(InterruptedException ie) {
                ie.printStackTrace();
             }
